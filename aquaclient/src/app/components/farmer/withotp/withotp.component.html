@@ -1,0 +1,10 @@
+<form #otpForm="ngForm" (ngSubmit)="registerWithOtp()">
+   
+    <div class="form-group">
+        <label for="otp">Enter Otp 12345</label>
+        <input type="text" name="otp" #name="ngModel" [(ngModel)]="otp" class="form-control"/>
+    </div>
+
+  
+    <input type="submit" value="submit" class="btn btn-success" />
+</form>

@@ -1,0 +1,36 @@
+<form #countryForm="ngForm" (ngSubmit)="farmerRegistration()">
+    <!-- <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" name="_id" #name="ngModel" [(ngModel)]="farmer._id" class="form-control"/>
+    </div> -->
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="farmer.name" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" #name="ngModel" [(ngModel)]="farmer.password" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="farmname">Farm Name</label>
+        <input type="text" name="farmname" #name="ngModel" [(ngModel)]="farmer.farmname" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="address">Farm Address</label>
+        <input type="text" name="address" #name="ngModel" [(ngModel)]="farmer.address" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="pincode">Pincode</label>
+        <input type="text" name="pincode" #name="ngModel" [(ngModel)]="farmer.pincode" class="form-control" />
+    </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" name="state" #name="ngModel" [(ngModel)]="farmer.state" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="country">country</label>
+        <input type="text" name="country" #name="ngModel" [(ngModel)]="farmer.country" class="form-control" />
+    </div>
+
+    <input type="submit" value="submit" class="btn btn-success" />
+</form>

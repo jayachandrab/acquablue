@@ -1,0 +1,19 @@
+<form #countryForm="ngForm" (ngSubmit)="createOrUpdate()">
+  
+        <input type="hidden" name="_id" #name="ngModel" [(ngModel)]="country._id" class="form-control"/>
+    
+    <div class="form-group">
+        <label for="name">Pond Name</label>
+        <input type="text" name="pondname" #name="ngModel" [(ngModel)]="country.pondname" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="capital">Pond size in hectares</label>
+        <input type="text" name="pondsize" #name="ngModel" [(ngModel)]="country.pondsize" class="form-control" />
+    </div>
+
+   
+        <input type="hidden" name="phone" #name="ngModel" [(ngModel)]="country.phone" class="form-control" />
+  
+
+    <input type="submit" value="submit" class="btn btn-success" />
+</form>
