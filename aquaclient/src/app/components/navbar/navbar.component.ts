@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router } from '@angular/router';
 import {CountryService } from '../../shared/country.service';
-import {Country} from '../../country';
+import {Pond} from '../../pond';
 import {FarmerRegistration} from '../../farmerRegistration';
 
 @Component({
@@ -11,7 +11,12 @@ import {FarmerRegistration} from '../../farmerRegistration';
 })
 export class NavbarComponent implements OnInit {
   phone:string;
-  constructor(private router:Router,private countryService:CountryService) { }
+  mySubscription: any;
+
+  constructor(private router:Router,private countryService:CountryService) { 
+
+
+  }
 
   ngOnInit(): void {
     this.phone = localStorage.getItem('phone');
@@ -21,7 +26,7 @@ export class NavbarComponent implements OnInit {
   newCountry(event:any){
     console.log("in new country navbar ");
       event.preventDefault();
-      this.countryService.setter(new Country());
+      this.countryService.setter(new Pond());
       this.router.navigate(['/createUpdate']);
   }
 
@@ -42,7 +47,10 @@ export class NavbarComponent implements OnInit {
   createPond(event:any){
     console.log("in new pond navbar ");
       event.preventDefault();
-      this.countryService.setter(new Country()); // initializing pond
+      this.countryService.setter(new Pond()); // initializing pond
       this.router.navigate(['/createUpdate']);
   }
+
+  
+
 }

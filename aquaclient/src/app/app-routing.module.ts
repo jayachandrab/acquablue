@@ -6,6 +6,7 @@ import { OtpComponent } from './components/farmer/otp/otp.component';
 import { RegisterComponent } from './components/farmer/register/register.component';
 import {LoginComponent} from './components/farmer/login/login.component';
 import {WithotpComponent} from './components/farmer/withotp/withotp.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
   {path:'',component:ListComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'withotp',component:WithotpComponent}
+  
 ];
 
 @NgModule({

@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import{CountryService} from '../../../shared/country.service';
 import {Router} from '@angular/router';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Country } from '../../../country';
+import { Pond } from '../../../pond';
+
 
 @Component({
   selector: 'app-login',

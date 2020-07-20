@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CountryService } from '../../shared/country.service';
-import {Country} from '../../country';
+import {Pond} from '../../pond';
 import {Router} from '@angular/router';
+import {Location} from  '@angular/common';
 
 @Component({
   selector: 'app-list',
@@ -9,19 +10,27 @@ import {Router} from '@angular/router';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  ponds:Country[];
+  ponds:Pond[];
+  mySubscription: any;
 
-  constructor(private countryService:CountryService,private router:Router) { }
+  constructor(private countryService:CountryService,private router:Router,private loc:Location) {
+   
+
+   }
 
   ngOnInit(): void {
-
+   
     this.readCountries();
+    
   }
 
   readCountries(){
     this.countryService.readCountries().subscribe(data=>{
-      console.log(data);
+      console.log("ind read countries"+data);
       this.ponds=data['msg'];
+     
+        
+      
     },error=>{
       console.log(error);
     }
@@ -40,4 +49,11 @@ export class ListComponent implements OnInit {
       this.ponds.splice(this.ponds.indexOf(country),1);
     })
   }
+
+
+  reloadPage() {
+    window.location.reload();
+ }
+
+
 }

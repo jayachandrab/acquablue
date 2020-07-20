@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders,HttpParams} from '@angular/common/http';
-import {Country} from '../country';
+import {Pond} from '../pond';
 import {FarmerRegistration} from '../farmerRegistration';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
-  private country:Country;
+  private pond:Pond;
   private farmer:FarmerRegistration;
   private phone:string;
   private baseUri:string="http://localhost:3000";
@@ -15,9 +15,9 @@ export class CountryService {
 
   constructor(private http:HttpClient) { }
 
-  createCountry(country:Country){
-    console.log("sending request to node server  =>=========== "+JSON.stringify(country));
-    return this.http.post("http://localhost:3000/create",country,{headers:this.headers});
+  createCountry(pond:Pond){
+    console.log("sending request to node server  =>=========== "+JSON.stringify(pond));
+    return this.http.post("http://localhost:3000/create",pond,{headers:this.headers});
   }
 
   readCountries(){
@@ -25,22 +25,21 @@ export class CountryService {
     return this.http.get(this.baseUri+'/read/'+login);
   }
 
-  updateCountry(country:Country){
-    return this.http.put(this.baseUri+'/update',country);
+  updateCountry(pond:Pond){
+    return this.http.put(this.baseUri+'/update',pond);
   }
 
   deleteCountry(id:string){
     return this.http.delete(this.baseUri+'/delete/'+id);
   }
-setter(country:Country){
-  this.country=country;
+setter(pond:Pond){
+  this.pond=pond;
 
-  console.log("setter  =>=========== "+JSON.stringify(country));
 
 }
 getter(){
-  console.log("getter  =>=========== "+JSON.stringify(this.country));
-  return this.country;
+  
+  return this.pond;
 }
 setPhone(phone){
  

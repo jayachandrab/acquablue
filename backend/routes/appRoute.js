@@ -6,7 +6,7 @@ var farmerRegister=require('../models/farmerregisterModel');
 
 
 router.post('/create',(req,res,next)=>{
-    console.log(req.body);
+    
     var newCountry=new Country({
         pondname:req.body.pondname,
         pondsize:req.body.pondsize,
@@ -41,7 +41,7 @@ router.get('/read/:login',(req,res,next)=>{
 
 
 router.put('/update',(req,res,next)=>{
-    console.log("in update "+req.body.pondsize);
+    
     Country.findById(req.body._id,(err,country)=>{
         if(err){
             res.status(500).json({errmsg:err});
@@ -65,7 +65,7 @@ router.put('/update',(req,res,next)=>{
 });
 
 router.delete('/delete/:id',(req,res,next)=>{
-    console.log("==== "+req.params.id);
+    
     Country.findByIdAndRemove({_id:req.params.id},(err,country)=>{
         if(err){
             res.status(500).json({errmsg:err});
@@ -79,8 +79,7 @@ router.delete('/delete/:id',(req,res,next)=>{
 
 
 router.post('/registerfarmer',(req,res,next)=>{
-    
-    console.log(req.body);
+ 
     var farmer=new farmerRegister({
         name:req.body.name,
         password:req.body.password,
@@ -106,8 +105,7 @@ router.post('/registerfarmer',(req,res,next)=>{
 });
 
 router.post('/login',(req,res,next)=>{
-    
-    console.log(req.body);
+  
   
     farmerRegister.find({ phone: req.body.phone },(err,farmer)=>{
         if(err){

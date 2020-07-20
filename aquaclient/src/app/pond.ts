@@ -1,4 +1,4 @@
-export class Country{
+export class Pond{
     public _id?:string;
     public pondname:string;
     public pondsize:string;
